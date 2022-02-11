@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        what do you want to do with recycle waste?
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-radio-group value="client">
+        <ion-item>
+          <ion-label>I want to sell it</ion-label>
+          <ion-radio slot="start" value="client"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>I want to buy it</ion-label>
+          <ion-radio slot="start" value="partner"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Contact
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input type="text" placeholder="Enter your Name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" placeholder="Enter your email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" placeholder="Enter your password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">confirm password</ion-label>
+        <ion-input type="password" placeholder="Re-Enter you password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Phone number</ion-label>
+        <ion-input type="tel" placeholder="Enter your Phone number"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Address Information
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Plot No</ion-label>
+        <ion-input type="tel" placeholder="Enter your number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Address 1</ion-label>
+        <ion-input type="text" placeholder="Enter your Address 1"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Address 2</ion-label>
+        <ion-input type="text" placeholder="Enter your Address 2"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Village / City</ion-label>
+        <ion-input type="text" placeholder="Enter your Village / City"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">State</ion-label>
+        <ion-input type="text" placeholder="Enter your state"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">zip code</ion-label>
+        <ion-input type="tel" placeholder="Enter your zipcode"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Country</ion-label>
+        <ion-input type="text" placeholder="Enter your Country"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-button shape="round" size="full" color="primary" routerLink="/login">Register Now</ion-button>
+</ion-content>

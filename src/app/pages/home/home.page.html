@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>home</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="gotohome()">
+        <ion-icon name="log-out-outline" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let user of messagelist">
+      <ion-avatar slot="start">
+        <img src="https://thumbs.dreamstime.com/b/person-gray-photo-placeholder-man-costume-white-background-person-gray-photo-placeholder-man-136701248.jpg" alt="user-icon">
+      </ion-avatar>
+      <ion-label>
+        <h6>{{ user.username}}</h6>
+        <p>Recent message: <span>{{ user.messageCount }}</span></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+        Last call pickup
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-icon name="hourglass-outline" slot="start" color="warning"></ion-icon>
+        <ion-label>
+          on hold
+          <p>11/02/2022 15:14:00 PM</p>
+        </ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>
+          <p>Created at 10/02/2022</p>
+          <p>Notes: we have two bags that are full</p>
+        </ion-label>
+      </ion-item>
+      <ion-button color="primary" fill="clear" size="full"  routerLink="/pickup-call">see all...</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

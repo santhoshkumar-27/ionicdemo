@@ -1,6 +1,6 @@
 <ion-content>
   <div class="container">
-    <ion-card  style="border-radius: 1rem;">
+    <ion-card>
       <ion-card-header>
         <ion-card-title color="primary">Demo App</ion-card-title>
       </ion-card-header>
@@ -14,9 +14,21 @@
           <ion-label position="floating">Password</ion-label>
           <ion-input type="password" placeholder="Enter your password"></ion-input>
         </ion-item>
-        <ion-button color="tertiary" fill="clear" size="full">Forgot password / Email</ion-button>
-        <ion-button color="success"  size="full">Login</ion-button>
-        <ion-button color="primary" fill="clear" size="full">Register</ion-button>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-button color="success" shape="round" size="full" routerLink="/home">Log-in</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button color="tertiary" fill="clear" size="full" routerLink="/forgot">Forgot password?</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button color="primary" fill="clear" size="full" routerLink="/register">Sign-Up</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-card-content>
     </ion-card>
   </div>
