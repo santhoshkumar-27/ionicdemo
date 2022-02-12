@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CardI } from 'src/constant';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  lastCallList: CardI[] = [
+    {
+      icon : 'hourglass-outline',
+      status: 'on hold',
+      updated: '12/02/2022 10:30AM',
+      created: '11/02/2022',
+      notes: 'here this is very cool'
+    },
+  ];
   messagelist: any = [
     {
       username: 'santhoshkumar',
