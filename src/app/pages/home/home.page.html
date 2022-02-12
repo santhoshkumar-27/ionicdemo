@@ -30,11 +30,11 @@
         Last call pickup
       </ion-card-subtitle>
     </ion-card-header>
-    <ion-button footer color="primary" fill="clear" size="full"  routerLink="/pickup-call">see all...</ion-button>
+    <ion-button footer color="primary" fill="clear" size="full"  (click)="goToMyPickCall()">see all...</ion-button>
   </app-card>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="success">
-      <ion-icon name="add" routerLink="/mypickupcall"></ion-icon>
+      <ion-icon name="add" (click)="goToPickCall()"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>

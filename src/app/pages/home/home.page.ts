@@ -8,6 +8,8 @@ import { CardI } from 'src/constant';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+
+
   lastCallList: CardI[] = [
     {
       icon : 'hourglass-outline',
@@ -70,4 +72,10 @@ export class HomePage implements OnInit {
   gotohome() {
     this.router.navigate(['/login']);
   }
+  goToPickCall() {
+    this.router.navigate(['pickup-call']);
+  }
+  goToMyPickCall() {
+    this.router.navigate(['mypickupcall']);
+}
 }

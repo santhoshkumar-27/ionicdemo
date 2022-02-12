@@ -17,7 +17,7 @@
         <ion-grid>
           <ion-row>
             <ion-col>
-              <ion-button color="success" shape="round" size="full" routerLink="/home">Log-in</ion-button>
+              <ion-button color="success" shape="round" size="full" (click)="homePage()" >Log-in</ion-button>
             </ion-col>
           </ion-row>
           <ion-row>
@@ -25,7 +25,7 @@
               <ion-button color="tertiary" fill="clear" size="full" routerLink="/forgot">Forgot password?</ion-button>
             </ion-col>
             <ion-col>
-              <ion-button color="primary" fill="clear" size="full" routerLink="/register">Sign-Up</ion-button>
+              <ion-button color="primary" fill="clear" size="full" (click)="registerPage()">Sign-Up</ion-button>
             </ion-col>
           </ion-row>
         </ion-grid>
