@@ -22,9 +22,6 @@
           </ion-item>
           <div *ngIf="submitted && form.invalid" class="text-end" >
             <app-error [field]="form.get('password')" error="required" message="Password is mandatory"></app-error>
-            <!-- <ion-label color="danger" *ngIf="f.password.errors?.required">
-              Password is mandatory
-            </ion-label> -->
           </div>
           <ion-grid>
             <ion-row>
