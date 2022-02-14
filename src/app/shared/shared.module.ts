@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './card/card.component';
 import { IonicModule } from '@ionic/angular';
+import { ErrorMessageComponent } from './error-message/error-message.component';
 
 
 
@@ -11,10 +12,12 @@ import { IonicModule } from '@ionic/angular';
     IonicModule,
   ],
   declarations: [
-    CardComponent
+    CardComponent,
+    ErrorMessageComponent
   ],
   exports: [
-    CardComponent
+    CardComponent,
+    ErrorMessageComponent
   ],
 })
 export class SharedModule { }

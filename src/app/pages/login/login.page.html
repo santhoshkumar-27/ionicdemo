@@ -6,29 +6,42 @@
       </ion-card-header>
     
       <ion-card-content>
-        <ion-item>
-          <ion-label position="floating">Email</ion-label>
-          <ion-input type="email" placeholder="Enter your email"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Password</ion-label>
-          <ion-input type="password" placeholder="Enter your password"></ion-input>
-        </ion-item>
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-              <ion-button color="success" shape="round" size="full" (click)="homePage()" >Log-in</ion-button>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col>
-              <ion-button color="tertiary" fill="clear" size="full" routerLink="/forgot">Forgot password?</ion-button>
-            </ion-col>
-            <ion-col>
-              <ion-button color="primary" fill="clear" size="full" (click)="registerPage()">Sign-Up</ion-button>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+        <form [formGroup]="form">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="text" formControlName="email" placeholder="Enter your email" [ngClass]="{'is-invalid' : submitted && f.email.errors}"></ion-input>
+          </ion-item>
+          <div *ngIf="submitted && form.invalid" class="text-end" >
+            <app-error [field]="form.get('email')" error="required" message="Email is mandatory"></app-error>
+            <app-error [field]="form.get('email')" error="email" message="Enter valid email id"></app-error>
+          </div>
+          <div class="clearfix"></div>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" formControlName="password" placeholder="Enter your password"></ion-input>
+          </ion-item>
+          <div *ngIf="submitted && form.invalid" class="text-end" >
+            <app-error [field]="form.get('password')" error="required" message="Password is mandatory"></app-error>
+            <!-- <ion-label color="danger" *ngIf="f.password.errors?.required">
+              Password is mandatory
+            </ion-label> -->
+          </div>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-button color="success" type="submit" shape="round" size="full" (click)="onSubmit()" >Log-in</ion-button>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-button color="tertiary" fill="clear" size="full" routerLink="/forgot">Forgot password?</ion-button>
+              </ion-col>
+              <ion-col>
+                <ion-button color="primary" fill="clear" size="full" (click)="registerPage()">Sign-Up</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </form>
       </ion-card-content>
     </ion-card>
   </div>
