@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from './card/card.component';
 import { IonicModule } from '@ionic/angular';
 import { ErrorMessageComponent } from './error-message/error-message.component';
+import { LoaderCComponent } from './loader-c/loader-c.component';
 
 
 
@@ -13,11 +14,13 @@ import { ErrorMessageComponent } from './error-message/error-message.component';
   ],
   declarations: [
     CardComponent,
-    ErrorMessageComponent
+    ErrorMessageComponent,
+    LoaderCComponent
   ],
   exports: [
     CardComponent,
-    ErrorMessageComponent
+    ErrorMessageComponent,
+    LoaderCComponent
   ],
 })
 export class SharedModule { }

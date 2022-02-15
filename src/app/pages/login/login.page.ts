@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { hide, show } from 'src/store/loadingState/loading.action';
 import { loginForm } from './login.page.form';
-
+import { AppStateI } from '../../../store/AppState';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -11,7 +13,11 @@ import { loginForm } from './login.page.form';
 export class LoginPage implements OnInit {
   form: FormGroup;
   submitted: boolean;
-  constructor(private router: Router, private fb: FormBuilder) { }
+  constructor(
+    private router: Router,
+    private fb: FormBuilder,
+    private store: Store<AppStateI>
+    ) { }
 
   ngOnInit() {
     this.form = new loginForm(this.fb).createForm();
@@ -37,7 +43,15 @@ export class LoginPage implements OnInit {
     return this.form.controls ;
   }
   // eslint-disable-next-line @typescript-eslint/member-ordering
-  get y() {
-    return this.form as FormGroup;
+  // get y() {
+  //   return this.form as FormGroup;
+  // }
+  forgotPassword(){
+    this.store.dispatch(show());
+
+    setTimeout(() => {
+      this.store.dispatch(hide());
+      this.passwordPage();
+    }, 3000);
   }
 }
