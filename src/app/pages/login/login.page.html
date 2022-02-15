@@ -9,7 +9,7 @@
         <form [formGroup]="form">
           <ion-item>
             <ion-label position="floating">Email</ion-label>
-            <ion-input type="text" formControlName="email" placeholder="Enter your email" [ngClass]="{'is-invalid' : submitted && f.email.errors}"></ion-input>
+            <ion-input type="text" formControlName="email" placeholder="Enter your email"></ion-input>
           </ion-item>
           <div *ngIf="submitted && form.invalid" class="text-end" >
             <app-error [field]="form.get('email')" error="required" message="Email is mandatory"></app-error>
@@ -31,10 +31,10 @@
             </ion-row>
             <ion-row>
               <ion-col>
-                <ion-button color="tertiary" fill="clear" size="full" (click)="forgotPassword()">Forgot password?</ion-button>
+                <ion-button color="tertiary" fill="clear" size="full" (click)="pageNavi('forgot')">Forgot password?</ion-button>
               </ion-col>
               <ion-col>
-                <ion-button color="primary" fill="clear" size="full" (click)="registerPage()">Sign-Up</ion-button>
+                <ion-button color="primary" fill="clear" size="full" (click)="pageNavi('register')">Sign-Up</ion-button>
               </ion-col>
             </ion-row>
           </ion-grid>

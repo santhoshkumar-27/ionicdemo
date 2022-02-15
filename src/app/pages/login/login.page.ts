@@ -22,36 +22,32 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     this.form = new loginForm(this.fb).createForm();
   }
-
-  homePage() {
-    this.router.navigate(['home']);
-  }
-  registerPage() {
-    this.router.navigate(['register']);
-  }
-  passwordPage() {
-    this.router.navigate(['forgot']);
-  }
   onSubmit() {
     this.submitted = true;
     if(this.form.valid) {
-      this.homePage();
+      this.pageNavi('home');
     }
   }
   // eslint-disable-next-line @typescript-eslint/member-ordering
-  get f() {
-    return this.form.controls ;
-  }
-  // eslint-disable-next-line @typescript-eslint/member-ordering
-  // get y() {
-  //   return this.form as FormGroup;
+  // get f() {
+  //   return this.form.controls ;
   // }
-  forgotPassword(){
+  pageNavi( e: string){
     this.store.dispatch(show());
 
     setTimeout(() => {
       this.store.dispatch(hide());
-      this.passwordPage();
-    }, 3000);
+      switch(e) {
+        case 'forgot':
+          this.router.navigate(['forgot']);
+          break;
+        case 'home':
+          this.router.navigate(['home']);
+          break;
+        case 'register':
+          this.router.navigate(['register']);
+          break;
+      }
+    }, 1500);
   }
 }
