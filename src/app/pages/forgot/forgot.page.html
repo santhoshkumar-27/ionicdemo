@@ -19,7 +19,7 @@
         <form [formGroup]="form">
           <ion-item>
             <ion-label position="floating">Email or Mobile number</ion-label>
-            <ion-input type="text" formControlName="veriCode"></ion-input>
+            <ion-input type="text" formControlName="veriCode" id="forgotButton" placeholder="Email or Mobile number"></ion-input>
           </ion-item>
           <div *ngIf="submitted && form.invalid" class="text-end" >
             <app-error [field]="form.get('veriCode')" error="required" message="Email or Mobile is mandatory"></app-error>

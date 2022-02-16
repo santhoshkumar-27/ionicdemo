@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { AppStateI } from 'src/store/AppState';
+import { hide, show } from 'src/store/loadingState/loading.action';
 import { ForgotForm } from './forgot.form.page';
 
 @Component({
@@ -13,7 +16,8 @@ export class ForgotPage implements OnInit {
   submitted: boolean;
   constructor(
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private store: Store<AppStateI>
   ) { }
 
   ngOnInit() {
@@ -22,7 +26,18 @@ export class ForgotPage implements OnInit {
   onSubmit() {
     this.submitted = true;
     if(this.form.valid) {
-      this.router.navigate(['createpassword']);
+      // this.router.navigate(['createpassword']);
+      this.pageNavi();
     }
+  }
+  pageNavi(){
+    this.store.dispatch(show());
+
+    setTimeout(() => {
+      this.store.dispatch(hide());
+      this.router.navigate(['createpassword']);
+    }, 1500);
+  }
+  forgotPassword() {
   }
 }

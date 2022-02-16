@@ -34,17 +34,17 @@ describe('LoginPage', () => {
   });
   it('should go to the home page', ()=> {
     spyOn(router, 'navigate');
-    component.homePage();
+    // component.homePage();
     expect(router.navigate).toHaveBeenCalledWith(['home']);
   });
   it('should go to the register page', () => {
     spyOn(router, 'navigate');
-    component.registerPage();
+    // component.registerPage();
     expect(router.navigate).toHaveBeenCalledWith(['register']);
   });
   it('should go to the forgot password page', () => {
     spyOn(router, 'navigate');
-    component.passwordPage();
+    // component.passwordPage();
     expect(router.navigate).toHaveBeenCalledWith(['forgot']);
   });
 });
