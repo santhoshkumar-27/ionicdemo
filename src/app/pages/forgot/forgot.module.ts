@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ForgotPageRoutingModule } from './forgot-routing.module';
 
 import { ForgotPage } from './forgot.page';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { ForgotPage } from './forgot.page';
     FormsModule,
     IonicModule,
     ForgotPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   declarations: [ForgotPage]
 })

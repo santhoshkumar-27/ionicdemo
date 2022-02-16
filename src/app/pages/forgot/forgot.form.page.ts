@@ -4,7 +4,9 @@ export class ForgotForm {
     constructor(private fb: FormBuilder) {}
     createForgotForm(): FormGroup {
         return this.forgot = this.fb.group({
-            email: ['', [Validators.required]]
+            veriCode:
+            ['',
+            [Validators.required, Validators.pattern(/(^([a-zA-Z0-9\.]{0,})(@)([a-zA-Z]{2,})(\.)([A-Za-z]{2,})$)|([\d]{10})/)]]
         });
     }
 }
