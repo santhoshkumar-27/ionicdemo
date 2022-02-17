@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppStateI } from 'src/store/AppState';
 import { hide, show } from 'src/store/loadingState/loading.action';
+import { recoveryPassword } from 'src/store/login/login.action';
 import { ForgotForm } from './forgot.form.page';
 
 @Component({
@@ -39,5 +40,7 @@ export class ForgotPage implements OnInit {
     }, 1500);
   }
   forgotPassword() {
+    console.log('this is state', this.store.dispatch(recoveryPassword()));
+    this.store.dispatch(recoveryPassword());
   }
 }

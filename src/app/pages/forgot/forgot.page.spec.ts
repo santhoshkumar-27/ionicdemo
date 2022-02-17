@@ -3,6 +3,7 @@ import { IonicModule } from '@ionic/angular';
 import { Store, StoreModule } from '@ngrx/store';
 import { AppStateI } from 'src/store/AppState';
 import { loadingReducer } from 'src/store/loadingState/loading.reducer';
+import { recoveryPassword } from 'src/store/login/login.action';
 import { loginReducer } from 'src/store/login/login.reducer';
 
 import { ForgotPage } from './forgot.page';
@@ -40,6 +41,13 @@ describe('ForgotPage', () => {
     page.querySelector('#forgotButton').click();
     store.select('login').subscribe(loginState => {
       expect(loginState.isRecoveringPassword).toBeTruthy();
+    });
+  });
+  it('should show the loading state when user recovery password', () => {
+    fixture.detectChanges();
+    store.dispatch(recoveryPassword());
+    store.select('loading').subscribe(loadingState => {
+      expect(loadingState.show).toBeTruthy();
     });
   });
 });
