@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { AppStateI } from 'src/store/AppState';
+
 import { hide, show } from 'src/store/loadingState/loading.action';
 import { recoveryPassword } from 'src/store/login/login.action';
 import { ForgotForm } from './forgot.form.page';
-
+import { AppStateI } from '../../../store/AppState';
+import { Observable } from 'rxjs';
+import { loginStateI } from 'src/store/login/loginstate';
 @Component({
   selector: 'app-forgot',
   templateUrl: './forgot.page.html',
@@ -15,6 +17,7 @@ import { ForgotForm } from './forgot.form.page';
 export class ForgotPage implements OnInit {
   form: FormGroup;
   submitted: boolean;
+  cot$: Observable<loginStateI>;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -23,15 +26,16 @@ export class ForgotPage implements OnInit {
 
   ngOnInit() {
     this.form = new ForgotForm(this.fb).createForgotForm();
+    this.store.select('login');
   }
   onSubmit() {
     this.submitted = true;
-    if(this.form.valid) {
+    if (this.form.valid) {
       // this.router.navigate(['createpassword']);
       this.pageNavi();
     }
   }
-  pageNavi(){
+  pageNavi() {
     this.store.dispatch(show());
 
     setTimeout(() => {
@@ -40,7 +44,6 @@ export class ForgotPage implements OnInit {
     }, 1500);
   }
   forgotPassword() {
-    console.log('this is state', this.store.dispatch(recoveryPassword()));
     this.store.dispatch(recoveryPassword());
   }
 }

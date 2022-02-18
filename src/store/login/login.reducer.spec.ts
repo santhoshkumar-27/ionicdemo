@@ -26,6 +26,7 @@ describe('login store', () => {
     });
     it('recoverpasswordFail', () => {
         const login: loginStateI = AppInitialState.login;
+        const errors = { error : 'string'};
         const newState = loginReducer(login, recoveryPasswordFail({errors}));
         expect(newState).toEqual({
             ...login,
