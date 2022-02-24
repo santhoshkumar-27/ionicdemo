@@ -33,5 +33,5 @@ const reducerlogin = createReducer(
 );
 // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
 export function loginReducer(state: loginStateI, action) {
-    reducerlogin(state, action);
+    return reducerlogin(state, action);
 };
